@@ -1,4 +1,4 @@
-# <> Desafio Fullstack BIT </>
+# Desafio Webcrawler BIT
 
 ## Sobre
 
@@ -23,12 +23,14 @@ Utilizando o _framework_ [Scrapy](https://scrapy.org/), desenvolva uma robô que
 ## Exemplo de inserção no _json_
 Cada citação deve ser salva no arquivo _json_ seguindo o seguinte formato:
 
+![](https://github.com/b2w-atech/desafio-webcrawler/raw/master/quote_albert_einstein.png)
+
 ```json
 {
-  "text": "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking",
+  "text": "\u201cThe world as we have created it is a process of our thinking. It cannot be changed without changing our thinking\u201d",
   "author": {
     "name": "Albert Einstein",
-    "url": "http://quotes.toscrape.com//author/Albert-Einstein"
+    "url": "http://quotes.toscrape.com/author/Albert-Einstein"
   },
   "tags": [
       "change",
