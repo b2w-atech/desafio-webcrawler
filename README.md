@@ -56,3 +56,5 @@ Cada citação deve ser salva no _MongoDB_ seguindo o seguinte formato:
 ## ...
 
 Tudo pronto? Basta criar um _fork_ deste repositório e abrir um **pull request** quando finalizar ;)
+
+Em caso de dúvidas, envie um e-mail pra gente: analytics.tech@b2wdigital.com 
