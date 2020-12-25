@@ -3,8 +3,8 @@
 ## Configurações iniciais:
 
 - Certificar de que possui o python 3.
-- O MongoDB estou utilizando o MongoDB Atlas que é em nuvem, portanto, o link para poder utiilzar via Shell/MongoDB Compass ou
-  alguma IDE que permita que faça consultas em banco é esse: <br>
+- O MongoDB estou utilizando o MongoDB Atlas que é em nuvem, portanto, o link para poder utiilzar via Shell/MongoDB
+  Compass ou alguma IDE que permita que faça consultas em banco é esse: <br>
   ``mongodb+srv://admin:<password>@cluster0.lw17c.mongodb.net/<dbname>?retryWrites=true&w=majority
   `` <br>
   OBS: Trocar as tags `<password>` e `<dbname>` para conseguir ter plena utilização do banco de dados.
@@ -26,3 +26,5 @@ na collection `marcosvinicius_simoescampos`.
 Todas as queries que foram pedidas estão no arquivo `queries.js`. Lá tem os comentários sobre o retorno esperado. Tudo
 que precisa ser feito é copiar e colar na ferramenta de consulta para verificar os dados que foram estruturados conforme
 foi solicitado.
+
+#### OBS: O arquivo ``items.json`` que está na pasta raíz foi criado para que veja como está estruturado os dados.
