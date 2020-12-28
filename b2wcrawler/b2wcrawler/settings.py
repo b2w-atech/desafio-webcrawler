@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'b2wcrawler.middlewares.B2WcrawlwerSpiderMiddleware': 543,
+#    'b2wcrawler.middlewares.B2WcrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'b2wcrawler.middlewares.B2WcrawlwerDownloaderMiddleware': 543,
+#    'b2wcrawler.middlewares.B2WcrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -68,6 +68,7 @@ ITEM_PIPELINES = {
 
 MONGO_URI = "mongodb://localhost:27017"
 MONGO_DATABASE = "quotestoscrape"
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
