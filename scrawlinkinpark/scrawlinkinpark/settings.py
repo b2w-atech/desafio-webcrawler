@@ -13,6 +13,13 @@ SPIDER_MODULES = ['scrawlinkinpark.spiders']
 NEWSPIDER_MODULE = 'scrawlinkinpark.spiders'
 
 
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'scrawlinkinpark (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+## NOTE: adds unnecessary overhead https://doc.scrapy.org/en/1.1/news.html#id8
+ROBOTSTXT_OBEY = False
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -23,6 +30,10 @@ NEWSPIDER_MODULE = 'scrawlinkinpark.spiders'
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+## NOTE: Cookies improve undesired bot detection 2021-05-16 19:18:58
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -78,3 +89,6 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+# MongoDB project settings (version 4.4.6)
+MONGO_URI = "mongodb://127.0.0.1:27017"
+MONGO_DATABASE = "quotestoscrape"
