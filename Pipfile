@@ -8,6 +8,7 @@ scrapy = "*"
 scrapyd = "*"
 pymongo = "*"
 attrs = "*"
+scrapy-fake-useragent = "*"
 
 [dev-packages]
 

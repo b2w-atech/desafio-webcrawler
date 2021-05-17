@@ -13,8 +13,13 @@ SPIDER_MODULES = ['scrawlinkinpark.spiders']
 NEWSPIDER_MODULE = 'scrawlinkinpark.spiders'
 
 
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'scrawlinkinpark (+http://www.yourdomain.com)'
+FAKEUSERAGENT_PROVIDERS = [
+    'scrapy_fake_useragent.providers.FakeUserAgentProvider',
+    'scrapy_fake_useragent.providers.FakerProvider',
+    'scrapy_fake_useragent.providers.FixedUserAgentProvider',
+]
+## NOTE: if all else fails, fallback to Mozilla Firefox
+USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0'
 
 # Obey robots.txt rules
 ## NOTE: adds unnecessary overhead https://doc.scrapy.org/en/1.1/news.html#id8
@@ -33,6 +38,7 @@ ROBOTSTXT_OBEY = False
 
 # Disable cookies (enabled by default)
 ## NOTE: Cookies improve undesired bot detection 2021-05-16 19:18:58
+## https://docs.scrapy.org/en/latest/topics/practices.html#avoiding-getting-banned
 COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
@@ -52,9 +58,12 @@ COOKIES_ENABLED = False
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'scrawlinkinpark.middlewares.ScrawlinkinparkDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+    'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
+    'scrapy_fake_useragent.middleware.RetryUserAgentMiddleware': 401,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

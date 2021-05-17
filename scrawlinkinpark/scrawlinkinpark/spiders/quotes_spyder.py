@@ -3,9 +3,12 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = 'quotes'
-    start_urls = [
-        'https://quotes.toscrape.com/',
-    ]
+
+    def __init__(self, tag='', **kwargs):
+        if tag:
+            tag = f'tag/{tag}'
+        self.start_urls = [f'https://quotes.toscrape.com/{tag}']
+        super().__init__(**kwargs)
 
 
     def parse(self, response):
