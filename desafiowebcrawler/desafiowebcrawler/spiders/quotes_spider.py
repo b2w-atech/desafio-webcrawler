@@ -10,7 +10,7 @@ class QuotesSpider(scrapy.Spider):
         'https://quotes.toscrape.com/login'
     ]
 
-
+    #### Faz login na pagina
     def parse(self, response):
         token = response.css('form input::attr(value)').extract_first()
         return FormRequest.from_response(
@@ -23,20 +23,22 @@ class QuotesSpider(scrapy.Spider):
             callback=self.start
         )
 
+    #### Inicia a coleta de dados ####
     def start(self, response):
-        #### Abre a requisicao no navegador (bom para visualizar funcionamento)
-        #open_in_browser(response)
-        
-        #### Inicia o scraping ####
+        #### open_in_browser(response) abre a requisicao no navegador (bom para visualizar funcionamento)
+        url = 'https://quotes.toscrape.com{}'
         itens = DesafiowebcrawlerItem()
-
+        # Aloca todas as divs em uma variavel
         all_div_quotes = response.css("div.quote")
         
+        # Percorre as divs iterando sobre os dados , a pipe armazena no banco
         for div in all_div_quotes:
-            title = div.css('span.text::text').extract()
+            title = div.css('span.text::text').extract_first()
             author = {
-                'name': div.css('.author::text').extract(),
-                'link_bio': div.css('.author::attr(href)').extract(),
+                'name': div.css('.author::text').extract_first(),
+                'url': url.format(div.xpath(
+                '/html/body/div/div[2]/div[1]/div[1]/span[2]/a/@href'
+                ).extract_first())
             }
             tag = div.css('.tag::text').extract()
             

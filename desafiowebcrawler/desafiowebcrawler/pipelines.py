@@ -18,8 +18,9 @@ class DesafiowebcrawlerPipeline(object):
         )
 
         ## Criando o banco
-        db = self.conn['desafiowebcrawler']
-        self.collection = db['quotes']
+        db = self.conn['quotestoscrape']
+        ## Criando a tabela
+        self.collection = db['matheus_ferreira']
 
 
     def process_item(self, item, spider):
