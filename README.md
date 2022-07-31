@@ -1,5 +1,38 @@
 # Desafio Webcrawler BIT
 
+
+# Considerações
+
+## Rodando o projeto
+
+Rodar o comando abaixo para instalar as dependências:
+
+```pip install -r requirements.txt```
+
+Instalar o MongoDB
+
+(https://www.mongodb.com/try/download/community)
+
+Feita a instalação, iniciar o MongoDB (arquivo mongod.exe, ou adicionar ao PATH)
+
+Para rodar o scrapy, no diretório do arquivo rodar o comando:
+
+```python
+scrapy crawl quotes
+```
+
+## Rodando as queries
+
+Para rodar as queries, rodar o comando abaixo para instalar as dependências do MongoDB no Node.JS:
+
+```npm install mongodb```
+
+Por fim, no diretório queries_js, rodar o comando:
+
+```python
+node <filename>
+```
+
 ## Sobre
 
 O desafio consiste na implementação de um _crawler_ que colete e armazene citações do site _http://quotes.toscrape.com_.
@@ -58,12 +91,3 @@ Cada citação deve ser salva no _MongoDB_ seguindo o seguinte formato:
 Tudo pronto? Basta criar um _fork_ deste repositório e abrir um **pull request** quando finalizar ;)
 
 Em caso de dúvidas, envie um e-mail pra gente: analytics.tech@b2wdigital.com 
-
-to install dependencies
-pip install -r requirements.txt 
-
-to run scrapy
-scrapy crawl quotes
-
-to run queries
-npm install mongodb
