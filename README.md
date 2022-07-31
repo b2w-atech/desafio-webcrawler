@@ -5,17 +5,17 @@
 
 ## Rodando o projeto
 
-Rodar o comando abaixo para instalar as dependências:
+1 - Rodar o comando abaixo para instalar as dependências:
 
 ```pip install -r requirements.txt```
 
-Instalar o MongoDB
+2 - Instalar o MongoDB
 
-(https://www.mongodb.com/try/download/community)
+https://www.mongodb.com/try/download/community
 
-Feita a instalação, iniciar o MongoDB (arquivo mongod.exe, ou adicionar ao PATH)
+3 - Feita a instalação, iniciar o MongoDB (arquivo mongod.exe, ou adicionar ao PATH)
 
-Para rodar o scrapy, no diretório do arquivo rodar o comando:
+4 - Para rodar o scrapy, no diretório do arquivo rodar o comando:
 
 ```python
 scrapy crawl quotes
@@ -23,11 +23,11 @@ scrapy crawl quotes
 
 ## Rodando as queries
 
-Para rodar as queries, rodar o comando abaixo para instalar as dependências do MongoDB no Node.JS:
+1 - Para rodar as queries, rodar o comando abaixo para instalar as dependências do MongoDB no Node.JS:
 
 ```npm install mongodb```
 
-Por fim, no diretório queries_js, rodar o comando:
+2 - Por fim, no diretório queries_js, rodar o comando:
 
 ```python
 node <filename>
