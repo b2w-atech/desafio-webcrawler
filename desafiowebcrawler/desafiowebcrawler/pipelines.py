@@ -21,7 +21,8 @@ class DesafiowebcrawlerPipeline(object):
         db = self.conn['quotestoscrape']
         ## Criando a tabela
         self.collection = db['matheus_ferreira']
-
+        #### Dropei a collection para nao duplicar os dados caso rode o scrapy duas vezes na mesma pagina
+        self.collection.drop()
 
     def process_item(self, item, spider):
         self.collection.insert_one(dict(item))
