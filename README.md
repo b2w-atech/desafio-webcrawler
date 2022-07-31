@@ -1,7 +1,7 @@
 # Desafio Webcrawler BIT
 
 
-# Considerações
+# Considerações 🚀
 
 ## Rodando o projeto
 
