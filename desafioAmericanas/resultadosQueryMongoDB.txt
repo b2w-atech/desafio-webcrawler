@@ -1,0 +1,99 @@
+Quantas citações foram coletadas?
+
+db.matheus_rodrigues.aggregate([{ $count: "citacao" }])
+
+[ { citacao: 100 } ]
+
+
+
+
+
+Quantas tags distintas foram coletadas?
+
+db.matheus_rodrigues.distinct("tags").length
+
+
+137
+
+
+
+
+Quantas citações por autor foram coletadas?
+
+
+db.matheus_rodrigues.aggregate([{$group: {_id: "$autor", qtd: {$sum: 1} } }])
+
+
+
+
+
+[
+  {
+    _id: { nome: 'Suzanne Collins', url: '/author/Suzanne-Collins' },
+    qtd: 2
+  },
+  { _id: { nome: 'Harper Lee', url: '/author/Harper-Lee' }, qtd: 1 },
+  { _id: { nome: 'Bob Marley', url: '/author/Bob-Marley' }, qtd: 3 },
+  {
+    _id: { nome: 'James Baldwin', url: '/author/James-Baldwin' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'Charles Bukowski', url: '/author/Charles-Bukowski' },
+    qtd: 2
+  },
+  { _id: { nome: 'John Lennon', url: '/author/John-Lennon' }, qtd: 1 },
+  {
+    _id: { nome: 'J.D. Salinger', url: '/author/J-D-Salinger' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'Mother Teresa', url: '/author/Mother-Teresa' },
+    qtd: 2
+  },
+  {
+    _id: { nome: 'Stephenie Meyer', url: '/author/Stephenie-Meyer' },
+    qtd: 1
+  },
+  {
+    _id: {
+      nome: 'Martin Luther King Jr.',
+      url: '/author/Martin-Luther-King-Jr'
+    },
+    qtd: 1
+  },
+  { _id: { nome: 'J.M. Barrie', url: '/author/J-M-Barrie' }, qtd: 1 },
+  {
+    _id: { nome: 'Helen Keller', url: '/author/Helen-Keller' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'George Bernard Shaw', url: '/author/George-Bernard-Shaw' },
+    qtd: 1
+  },
+  { _id: { nome: 'J.K. Rowling', url: '/author/J-K-Rowling' }, qtd: 9 },
+  {
+    _id: { nome: 'Terry Pratchett', url: '/author/Terry-Pratchett' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'E.E. Cummings', url: '/author/E-E-Cummings' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'Friedrich Nietzsche', url: '/author/Friedrich-Nietzsche' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'Albert Einstein', url: '/author/Albert-Einstein' },
+    qtd: 10
+  },
+  {
+    _id: { nome: 'Garrison Keillor', url: '/author/Garrison-Keillor' },
+    qtd: 1
+  },
+  {
+    _id: { nome: 'J.R.R. Tolkien', url: '/author/J-R-R-Tolkien' },
+    qtd: 1
+  }
+]
