@@ -4,6 +4,7 @@ from ..items import WebcrawlerItem
 
 
 class QuotesSpider(scrapy.Spider):
+    
     name = "webcrawler"
     start_urls = ['http://quotes.toscrape.com/']
 
@@ -12,10 +13,10 @@ class QuotesSpider(scrapy.Spider):
         for quote in response.css('div.quote'):
             item = WebcrawlerItem()         
 
-            item['title'] = quote.css('span.text::text').get()
-            item['author'] = {
+            item['text'] = quote.css('span.text::text').get()
+            item['author'] ={
                 'name': quote.css('small.author::text').get(),
-                'url':quote.xpath('//span/a/@href').get()
+                'url': quote.xpath('//span/a/@href').get()
             }
             item['tag'] =  quote.css('div.tags a.tag::text').getall()
             
@@ -24,4 +25,4 @@ class QuotesSpider(scrapy.Spider):
         next_page = response.css('li.next a::attr(href)').get()
         if next_page is not None:
             yield scrapy.Request(response.urljoin(next_page), callback=self.parse)
-        
+     

@@ -4,7 +4,8 @@ import scrapy
 
 
 class WebcrawlerItem(scrapy.Item):
+    
     author = scrapy.Field()
-    quote = scrapy.Field()
+    text = scrapy.Field()
     tag = scrapy.Field()
     
